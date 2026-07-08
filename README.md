@@ -1,4 +1,4 @@
-# Voss Atelier — Architecture Portfolio
+# Pelmot Creativity— Architecture Portfolio
 
 A premium, minimalist portfolio site for architect Elena Voss / Voss Atelier, built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion.
 
