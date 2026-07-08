@@ -14,7 +14,7 @@ export function About() {
     <>
       <SEO
         title="About"
-        description="Learn about Elena Voss, principal architect of Voss Atelier — her design philosophy, experience, education, and awards."
+        description="Learn about Pelmot Creativity — our design philosophy, experience, education, and awards."
       />
 
       <PageHero

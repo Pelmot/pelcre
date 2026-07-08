@@ -15,7 +15,7 @@ export function Home() {
     <>
       <SEO
         title="Architecture & Interiors"
-        description="Voss Atelier is the studio of architect Elena Voss, designing quiet, material-honest residential, commercial, and landscape architecture worldwide."
+        description="Pelmot Creativity is a studio designing quiet, material-honest residential, commercial, and landscape architecture worldwide."
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
       />
 
@@ -123,7 +123,7 @@ export function Home() {
           <div className="relative aspect-4/5 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=1400&q=80"
-              alt="Elena Voss reviewing drawings in the studio"
+              alt="Reviewing architectural drawings in the studio"
               loading="lazy"
               className="h-full w-full object-cover"
             />

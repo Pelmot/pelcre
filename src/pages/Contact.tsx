@@ -1,5 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import {
+  BehanceIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
+} from "@/components/ui/SocialIcons";
 import { PageHero } from "@/components/ui/PageHero";
 import { SEO } from "@/components/ui/SEO";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -12,7 +17,7 @@ export function Contact() {
     <>
       <SEO
         title="Contact"
-        description="Get in touch with Voss Atelier to discuss your next architecture, interior, or landscape project."
+        description="Get in touch with Pelmot Creativity to discuss your next architecture, interior, or landscape project."
       />
 
       <PageHero
@@ -87,6 +92,24 @@ export function Contact() {
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
               >
                 <LinkedinIcon size={16} />
+              </a>
+              <a
+                href={architect.social.behance}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Behance"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+              >
+                <BehanceIcon size={16} />
+              </a>
+              <a
+                href={architect.social.x}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X (Twitter)"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+              >
+                <XIcon size={16} />
               </a>
             </div>
           </ScrollReveal>

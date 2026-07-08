@@ -23,13 +23,13 @@ export function Services() {
     <>
       <SEO
         title="Services"
-        description="Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Voss Atelier."
+        description="Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Pelmot Creativity."
       />
 
       <PageHero
         eyebrow="What We Do"
         title="Services"
-        description="From first sketch to final finish, Voss Atelier offers a full range of architectural and design services tailored to the scale of your project."
+        description="From first sketch to final finish, Pelmot Creativity offers a full range of architectural and design services tailored to the scale of your project."
         image="https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?auto=format&fit=crop&w=2400&q=80"
         short
       />

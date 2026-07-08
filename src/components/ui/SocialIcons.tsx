@@ -32,12 +32,12 @@ export function LinkedinIcon({ size = 18, className }: IconProps) {
   );
 }
 
-export function PinterestIcon({ size = 18, className }: IconProps) {
+export function XIcon({ size = 18, className }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" className={className} {...base}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9.5 18c1-3 1.6-5.2 2.1-7.3.4-1.7 3-1.6 3.4.1.3 1.4-.6 3.5-2.2 3.5-.9 0-1.5-.5-1.7-1.1" />
-      <path d="M11.6 10.7c.2-1.1 1.3-1.9 1.3-1.9" />
+      <rect x="3" y="3" width="18" height="18" rx="2.5" />
+      <line x1="7.5" y1="7.5" x2="16.5" y2="16.5" />
+      <line x1="16.5" y1="7.5" x2="7.5" y2="16.5" />
     </svg>
   );
 }

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { architect } from "@/data/content";
 
 interface SEOProps {
   title: string;
@@ -7,7 +8,7 @@ interface SEOProps {
 }
 
 export function SEO({ title, description, image }: SEOProps) {
-  const fullTitle = `${title} — Elena Voss`;
+  const fullTitle = `${title} — ${architect.name}`;
 
   return (
     <Helmet>

@@ -16,7 +16,7 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-const STORAGE_KEY = "voss-atelier-theme";
+const STORAGE_KEY = "pelmot-creativity-theme";
 
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";

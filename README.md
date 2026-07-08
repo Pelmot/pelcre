@@ -1,6 +1,6 @@
-# Pelmot Creativity— Architecture Portfolio
+# Pelmot Creativity — Architecture Portfolio
 
-A premium, minimalist portfolio site for architect Elena Voss / Voss Atelier, built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion.
+A premium, minimalist portfolio site for Pelmot Creativity, built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Stack
 
@@ -36,22 +36,27 @@ src/
   hooks/        Small reusable hooks (scroll position, body scroll lock)
 ```
 
-All project and studio content lives in `src/data/` — update `projects.ts` and
+All studio and project content lives in `src/data/` — update `projects.ts` and
 `content.ts` to swap in real photography, bios, and copy without touching
 component code.
 
-## Deploying to Cloudflare Pages
+## Deploying to Cloudflare Workers
 
-The repo includes `public/_redirects` (SPA fallback routing) and a
-`wrangler.toml` pointing at `dist`. Connect the repo in the Cloudflare Pages
-dashboard, or deploy via Wrangler:
+The site deploys as a Cloudflare Worker serving static assets (see
+`wrangler.jsonc`), which is Cloudflare's current recommended path for static
+sites over Pages. Client-side routing is handled via
+`not_found_handling: "single-page-application"`.
+
+```bash
+npm run deploy   # builds and deploys via wrangler
+```
+
+or manually:
 
 ```bash
 npm run build
-npx wrangler pages deploy dist
+npx wrangler deploy
 ```
-
-Build command: `npm run build` · Output directory: `dist`.
 
 ## Notes
 

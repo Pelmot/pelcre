@@ -48,7 +48,7 @@ export function Projects() {
     <>
       <SEO
         title="Projects"
-        description="Browse residential, commercial, interior, landscape, and concept architecture projects by Voss Atelier."
+        description="Browse residential, commercial, interior, landscape, and concept architecture projects by Pelmot Creativity."
       />
 
       <PageHero

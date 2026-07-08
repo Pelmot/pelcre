@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import {
+  BehanceIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
+} from "@/components/ui/SocialIcons";
 import { architect } from "@/data/content";
 
 const columns = [
@@ -56,6 +61,24 @@ export function Footer() {
             >
               <LinkedinIcon size={16} />
             </a>
+            <a
+              href={architect.social.behance}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Behance"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+            >
+              <BehanceIcon size={16} />
+            </a>
+            <a
+              href={architect.social.x}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X (Twitter)"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+            >
+              <XIcon size={16} />
+            </a>
           </div>
         </div>
 
@@ -109,7 +132,7 @@ export function Footer() {
         <p>
           © {year} {architect.studio}. All rights reserved.
         </p>
-        <p>Architecture &amp; Interiors — Los Angeles</p>
+        <p>Architecture &amp; Interiors — Gaziantep</p>
       </div>
     </footer>
   );

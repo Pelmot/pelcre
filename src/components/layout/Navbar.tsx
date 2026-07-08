@@ -45,9 +45,6 @@ export function Navbar() {
           )}
         >
           {architect.name}
-          <span className="ml-2 hidden text-[0.65rem] font-sans font-medium tracking-[0.25em] uppercase opacity-50 sm:inline">
-            {architect.studio}
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex">

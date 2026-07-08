@@ -9,27 +9,28 @@ import type {
 } from "./types";
 
 export const architect = {
-  name: "Elena Voss",
-  studio: "Voss Atelier",
+  name: "Pelmot Creativity",
+  studio: "Pelmot Creativity",
   title: "Principal Architect",
   tagline: "Architecture that listens to its site before it speaks.",
-  location: "Based in Los Angeles — working worldwide",
-  email: "studio@vossatelier.com",
-  phone: "+1 (310) 555-0148",
-  address: "1140 Abbot Kinney Blvd, Venice, Los Angeles, CA 90291",
+  location: "Based in Gaziantep, Turkey — working worldwide",
+  email: "pelmot.creativity@gmail.com",
+  phone: "0530 449 94 00",
+  address: "Ibrahimli Mah. Sehitkamil, Gaziantep, Turkey",
   social: {
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com",
-    pinterest: "https://pinterest.com",
-    behance: "https://behance.net",
+    instagram:
+      "https://www.instagram.com/pelmot_creativity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedin: "https://www.linkedin.com/in/abdurrazzak-jazmati-b63ba1331/",
+    behance: "https://www.behance.net/abdurrajazmati",
+    x: "https://x.com/pelmot_crtvty?s=20",
   },
 };
 
 export const bio = {
   paragraphs: [
-    "Elena Voss founded her eponymous studio in 2011 after nearly a decade practicing at Herzog & de Meuron in Basel and SANAA in Tokyo, where she led detailing on two award-winning cultural projects.",
-    "Voss Atelier now works across residential, commercial, and public landscape commissions on four continents, guided by a single conviction: that the best buildings feel less designed than discovered — as though they were always meant to be exactly where they stand.",
-    "The studio keeps a deliberately small roster of active commissions at any time, typically no more than six, so that every project receives Elena's direct, hands-on involvement from first sketch to final punch list.",
+    "Pelmot Creativity was founded in 2011 after nearly a decade practicing at Herzog & de Meuron in Basel and SANAA in Tokyo, leading detailing on two award-winning cultural projects.",
+    "Pelmot Creativity now works across residential, commercial, and public landscape commissions on four continents, guided by a single conviction: that the best buildings feel less designed than discovered — as though they were always meant to be exactly where they stand.",
+    "The studio keeps a deliberately small roster of active commissions at any time, typically no more than six, so that every project receives the studio's direct, hands-on involvement from first sketch to final punch list.",
   ],
   philosophy: [
     {
@@ -51,7 +52,7 @@ export const timeline: TimelineItem[] = [
   {
     year: "2011 — Present",
     title: "Founder & Principal Architect",
-    place: "Voss Atelier, Los Angeles",
+    place: "Pelmot Creativity, Gaziantep",
     description:
       "Leading a 14-person studio across residential, commercial, and landscape commissions in North America, Europe, and Asia.",
   },
@@ -201,7 +202,7 @@ export const faqs: FAQItem[] = [
   {
     question: "Do you take on projects outside the United States?",
     answer:
-      "Yes. Voss Atelier currently has completed or active work in the United States, Denmark, Portugal, Morocco, Japan, and Singapore. We typically partner with a local executive architect of record for projects outside North America.",
+      "Yes. Pelmot Creativity currently has completed or active work in the United States, Denmark, Portugal, Morocco, Japan, and Singapore. We typically partner with a local executive architect of record for projects outside North America.",
   },
   {
     question: "What is your fee structure?",
@@ -211,7 +212,7 @@ export const faqs: FAQItem[] = [
   {
     question: "How many projects does the studio take on at once?",
     answer:
-      "We intentionally limit the studio to six active commissions at a time, so that Elena remains personally involved in every project from concept through construction administration.",
+      "We intentionally limit the studio to six active commissions at a time, so that our team remains closely and personally involved in every project from concept through construction administration.",
   },
   {
     question: "Can you work with our existing contractor or builder?",
@@ -225,13 +226,13 @@ export const testimonials: Testimonial[] = [
     name: "James & Priya Rao",
     role: "Meridian House, Montecito",
     quote:
-      "Elena listened more than she talked for the first two months — and it shows in every room. The house feels like it was excavated from the site, not built on top of it.",
+      "The team listened more than they talked for the first two months — and it shows in every room. The house feels like it was excavated from the site, not built on top of it.",
   },
   {
     name: "Marcus Lindqvist",
     role: "Director, Aurelia Holdings",
     quote:
-      "We asked for a lobby that would make tenants proud to give their address. Voss Atelier delivered a space that stops people mid-step. Worth every conversation about the budget.",
+      "We asked for a lobby that would make tenants proud to give their address. Pelmot Creativity delivered a space that stops people mid-step. Worth every conversation about the budget.",
   },
   {
     name: "Amara Diallo",
