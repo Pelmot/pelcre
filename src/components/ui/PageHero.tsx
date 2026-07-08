@@ -29,10 +29,10 @@ export function PageHero({
       <img
         src={image}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-55"
+        className="absolute inset-0 h-full w-full object-cover"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+      <div className="absolute inset-0 bg-ink/50" />
 
       <div className="container-lux relative z-10 pb-16 sm:pb-20">
         <motion.p
@@ -56,7 +56,7 @@ export function PageHero({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-bone/70"
+            className="mt-6 max-w-xl text-base leading-relaxed text-mist"
           >
             {description}
           </motion.p>

@@ -39,7 +39,7 @@ export function Footer() {
           <Link to="/" className="font-serif text-3xl">
             {architect.name}
           </Link>
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-bone/60">
+          <p className="mt-6 max-w-xs text-sm leading-relaxed text-mist">
             {architect.tagline}
           </p>
           <div className="mt-8 flex gap-4">
@@ -48,7 +48,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
             >
               <InstagramIcon size={16} />
             </a>
@@ -57,7 +57,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
             >
               <LinkedinIcon size={16} />
             </a>
@@ -66,7 +66,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Behance"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
             >
               <BehanceIcon size={16} />
             </a>
@@ -75,7 +75,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="X (Twitter)"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:border-gold hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
             >
               <XIcon size={16} />
             </a>
@@ -84,7 +84,7 @@ export function Footer() {
 
         {columns.map((col) => (
           <div key={col.title}>
-            <p className="mb-6 text-xs font-medium tracking-[0.25em] text-bone/40 uppercase">
+            <p className="mb-6 text-xs font-medium tracking-[0.25em] text-mist uppercase">
               {col.title}
             </p>
             <ul className="space-y-4">
@@ -92,7 +92,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="link-underline text-sm text-bone/80 hover:text-bone"
+                    className="link-underline text-sm text-mist hover:text-bone"
                   >
                     {link.label}
                   </Link>
@@ -103,22 +103,22 @@ export function Footer() {
         ))}
 
         <div>
-          <p className="mb-6 text-xs font-medium tracking-[0.25em] text-bone/40 uppercase">
+          <p className="mb-6 text-xs font-medium tracking-[0.25em] text-mist uppercase">
             Get in touch
           </p>
           <a
             href={`mailto:${architect.email}`}
-            className="link-underline block text-sm text-bone/80 hover:text-bone"
+            className="link-underline block text-sm text-mist hover:text-bone"
           >
             {architect.email}
           </a>
           <a
             href={`tel:${architect.phone.replace(/[^\d+]/g, "")}`}
-            className="link-underline mt-3 block text-sm text-bone/80 hover:text-bone"
+            className="link-underline mt-3 block text-sm text-mist hover:text-bone"
           >
             {architect.phone}
           </a>
-          <p className="mt-3 text-sm text-bone/60">{architect.address}</p>
+          <p className="mt-3 text-sm text-mist">{architect.address}</p>
           <Link
             to="/contact"
             className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-gold uppercase"
@@ -128,7 +128,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-lux flex flex-col items-center justify-between gap-4 border-t border-bone/10 py-8 text-xs text-bone/40 sm:flex-row">
+      <div className="container-lux flex flex-col items-center justify-between gap-4 border-t border-mist py-8 text-xs text-mist sm:flex-row">
         <p>
           © {year} {architect.studio}. All rights reserved.
         </p>

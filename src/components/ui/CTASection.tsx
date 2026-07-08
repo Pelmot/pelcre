@@ -27,7 +27,7 @@ export function CTASection({
             {title}
           </h2>
           {description && (
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-bone/60">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-mist">
               {description}
             </p>
           )}

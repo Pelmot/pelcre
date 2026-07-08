@@ -46,7 +46,7 @@ export function ImageLightbox({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/95 backdrop-blur-md"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink"
           role="dialog"
           aria-modal="true"
           onClick={onClose}
@@ -54,7 +54,7 @@ export function ImageLightbox({
           <button
             aria-label="Close lightbox"
             onClick={onClose}
-            className="absolute top-6 right-6 flex h-11 w-11 items-center justify-center rounded-full text-bone/80 transition-colors hover:text-bone"
+            className="absolute top-6 right-6 flex h-11 w-11 items-center justify-center rounded-full text-mist transition-colors hover:text-bone"
           >
             <X size={24} />
           </button>
@@ -65,7 +65,7 @@ export function ImageLightbox({
               e.stopPropagation();
               go(-1);
             }}
-            className="absolute left-3 flex h-12 w-12 items-center justify-center rounded-full text-bone/70 transition-colors hover:text-bone sm:left-8"
+            className="absolute left-3 flex h-12 w-12 items-center justify-center rounded-full text-mist transition-colors hover:text-bone sm:left-8"
           >
             <ChevronLeft size={28} />
           </button>
@@ -78,7 +78,7 @@ export function ImageLightbox({
             src={images[index]}
             alt=""
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[85vh] max-w-[88vw] object-contain shadow-2xl"
+            className="max-h-[85vh] max-w-[88vw] rounded-lg object-contain"
           />
 
           <button
@@ -87,12 +87,12 @@ export function ImageLightbox({
               e.stopPropagation();
               go(1);
             }}
-            className="absolute right-3 flex h-12 w-12 items-center justify-center rounded-full text-bone/70 transition-colors hover:text-bone sm:right-8"
+            className="absolute right-3 flex h-12 w-12 items-center justify-center rounded-full text-mist transition-colors hover:text-bone sm:right-8"
           >
             <ChevronRight size={28} />
           </button>
 
-          <p className="absolute bottom-6 text-xs tracking-[0.2em] text-bone/50 uppercase">
+          <p className="absolute bottom-6 text-xs tracking-[0.2em] text-mist uppercase">
             {index + 1} / {images.length}
           </p>
         </motion.div>

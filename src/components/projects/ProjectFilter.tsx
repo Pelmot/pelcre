@@ -30,7 +30,7 @@ export function ProjectFilter({
               "rounded-full border px-5 py-2.5 text-xs font-medium tracking-[0.15em] uppercase transition-colors duration-300",
               isActive
                 ? "border-ink bg-ink text-paper dark:border-bone dark:bg-bone dark:text-ink"
-                : "border-charcoal/20 text-stone hover:border-charcoal/50 hover:text-ink dark:border-bone/20 dark:hover:border-bone/50 dark:hover:text-bone",
+                : "border-mist text-stone hover:border-ink hover:text-ink dark:hover:text-bone",
             )}
           >
             {option}

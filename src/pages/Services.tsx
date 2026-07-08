@@ -1,12 +1,10 @@
 import { Box, Compass, Hammer, MessageCircle, Sofa, Trees, Check } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SEO } from "@/components/ui/SEO";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CTASection } from "@/components/ui/CTASection";
-import { services, faqs } from "@/data/content";
+import { services } from "@/data/content";
 import { cn } from "@/lib/cn";
 
 const icons: Record<string, LucideIcon> = {
@@ -35,7 +33,7 @@ export function Services() {
       />
 
       <section className="container-lux py-28 sm:py-36">
-        <div className="divide-y divide-charcoal/10 dark:divide-bone/10">
+        <div className="divide-y divide-mist">
           {services.map((service, i) => {
             const Icon = icons[service.icon] ?? Compass;
             const reverse = i % 2 === 1;
@@ -47,7 +45,7 @@ export function Services() {
                 )}
               >
                 <ScrollReveal className={cn("order-1", reverse && "sm:order-3")}>
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-charcoal/15 text-gold dark:border-bone/15">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-mist text-gold">
                     <Icon size={26} strokeWidth={1.25} />
                   </span>
                 </ScrollReveal>
@@ -77,13 +75,6 @@ export function Services() {
               </div>
             );
           })}
-        </div>
-      </section>
-
-      <section className="bg-linen py-28 sm:py-36 dark:bg-ink-soft">
-        <div className="container-lux max-w-3xl">
-          <SectionTitle eyebrow="Questions" title="Frequently Asked" className="mb-14" />
-          <FAQAccordion items={faqs} />
         </div>
       </section>
 

@@ -32,10 +32,9 @@ interface ClickButtonProps extends BaseProps {
 type ButtonProps = LinkButtonProps | AnchorButtonProps | ClickButtonProps;
 
 const variantClasses = {
-  primary:
-    "bg-ink text-paper hover:bg-charcoal dark:bg-bone dark:text-ink dark:hover:bg-mist",
+  primary: "bg-ink text-paper hover:opacity-85 dark:bg-bone dark:text-ink",
   outline:
-    "border border-current/30 text-inherit hover:border-current/70 bg-transparent",
+    "border border-current/30 text-inherit hover:border-current/70 hover:bg-current/5 bg-transparent",
   ghost: "bg-transparent hover:text-gold",
 };
 
@@ -43,7 +42,7 @@ export function Button(props: ButtonProps) {
   const { children, variant = "primary", className, icon = true } = props;
 
   const classes = cn(
-    "group inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition-all duration-500",
+    "group inline-flex items-center gap-2.5 rounded-lg px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition-all duration-500",
     variantClasses[variant],
     className,
   );

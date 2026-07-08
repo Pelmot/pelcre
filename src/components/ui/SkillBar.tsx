@@ -12,7 +12,7 @@ export function SkillBars({ skills }: { skills: Skill[] }) {
             </p>
             <p className="text-xs text-stone">{skill.level}%</p>
           </div>
-          <div className="h-px w-full bg-charcoal/10 dark:bg-bone/10">
+          <div className="h-px w-full bg-mist">
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: `${skill.level}%` }}

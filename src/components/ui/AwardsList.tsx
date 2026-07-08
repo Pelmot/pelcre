@@ -3,7 +3,7 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function AwardsList({ awards }: { awards: Award[] }) {
   return (
-    <div className="divide-y divide-charcoal/10 border-t border-b border-charcoal/10 dark:divide-bone/10 dark:border-bone/10">
+    <div className="divide-y divide-mist border-t border-b border-mist">
       {awards.map((award, i) => (
         <ScrollReveal key={award.title} delay={i * 0.04}>
           <div className="flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-7">

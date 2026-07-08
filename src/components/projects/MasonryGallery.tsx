@@ -12,7 +12,7 @@ export function MasonryGallery({ images, title = "Gallery" }: { images: string[]
           <ScrollReveal key={src + i} delay={(i % 6) * 0.05} className="break-inside-avoid">
             <button
               onClick={() => setActiveIndex(i)}
-              className="block w-full overflow-hidden bg-charcoal/10"
+              className="block w-full overflow-hidden rounded-lg border border-mist bg-charcoal/10"
               aria-label={`Open ${title} image ${i + 1}`}
             >
               <img

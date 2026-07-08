@@ -30,7 +30,7 @@ export function SectionTitle({
         <p
           className={cn(
             "mb-4 text-xs font-medium tracking-[0.3em] uppercase",
-            light ? "text-bone/60" : "text-stone",
+            light ? "text-mist" : "text-stone",
           )}
         >
           {eyebrow}
@@ -48,7 +48,7 @@ export function SectionTitle({
         <p
           className={cn(
             "mt-5 text-base leading-relaxed",
-            light ? "text-bone/70" : "text-stone",
+            light ? "text-mist" : "text-stone",
           )}
         >
           {description}

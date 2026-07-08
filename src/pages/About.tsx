@@ -28,7 +28,7 @@ export function About() {
       <section className="container-lux grid gap-16 py-28 sm:py-36 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <ScrollReveal>
           <div className="sticky top-32">
-            <div className="relative aspect-3/4 overflow-hidden">
+            <div className="relative aspect-3/4 overflow-hidden rounded-lg border border-mist">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=1200&q=80"
                 alt={`Portrait of ${architect.name}`}

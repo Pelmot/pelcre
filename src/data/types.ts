@@ -62,11 +62,6 @@ export interface Service {
   points: string[];
 }
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 export interface Testimonial {
   name: string;
   role: string;

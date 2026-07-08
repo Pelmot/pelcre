@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 interface FormState {
@@ -74,7 +74,7 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col items-start gap-4 border border-charcoal/15 bg-linen/60 p-10 dark:border-bone/15 dark:bg-ink-soft"
+        className="flex flex-col items-start gap-4 rounded-lg border border-mist bg-linen/60 p-10 dark:bg-ink-soft"
       >
         <CheckCircle2 className="text-gold" size={32} strokeWidth={1.5} />
         <h3 className="font-serif text-2xl text-ink dark:text-bone">
@@ -161,7 +161,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex items-center gap-2.5 bg-ink px-8 py-4 text-sm font-medium tracking-wide text-paper uppercase transition-colors hover:bg-charcoal disabled:opacity-60 dark:bg-bone dark:text-ink dark:hover:bg-mist"
+        className="inline-flex items-center gap-2.5 rounded-lg bg-ink px-8 py-4 text-sm font-medium tracking-wide text-paper uppercase transition-opacity hover:opacity-85 disabled:opacity-60 dark:bg-bone dark:text-ink"
       >
         {submitting ? "Sending..." : "Send message"}
       </button>
@@ -184,16 +184,21 @@ function Field({
         {label}
       </span>
       {children}
-      {error && <span className="mt-2 block text-xs text-red-500">{error}</span>}
+      {error && (
+        <span className="mt-2 flex items-center gap-1.5 text-xs font-medium text-ink dark:text-bone">
+          <AlertCircle size={14} className="shrink-0" />
+          {error}
+        </span>
+      )}
     </label>
   );
 }
 
 function inputClasses(hasError: boolean) {
   return cn(
-    "w-full border-b bg-transparent py-3 text-base text-ink outline-none transition-colors dark:text-bone",
+    "w-full rounded-lg border bg-paper px-4 py-3 text-base text-ink outline-none transition-colors dark:bg-ink-soft dark:text-bone",
     hasError
-      ? "border-red-400"
-      : "border-charcoal/25 focus:border-gold dark:border-bone/25",
+      ? "border-2 border-ink dark:border-bone"
+      : "border-mist focus:border-ink dark:focus:border-bone",
   );
 }

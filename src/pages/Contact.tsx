@@ -44,7 +44,7 @@ export function Contact() {
                   href={`mailto:${architect.email}`}
                   className="flex items-center gap-4 text-ink transition-colors hover:text-gold dark:text-bone"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/15 dark:border-bone/15">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-mist">
                     <Mail size={16} strokeWidth={1.5} />
                   </span>
                   {architect.email}
@@ -55,14 +55,14 @@ export function Contact() {
                   href={`tel:${architect.phone.replace(/[^\d+]/g, "")}`}
                   className="flex items-center gap-4 text-ink transition-colors hover:text-gold dark:text-bone"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/15 dark:border-bone/15">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-mist">
                     <Phone size={16} strokeWidth={1.5} />
                   </span>
                   {architect.phone}
                 </a>
               </li>
               <li className="flex items-start gap-4 text-ink dark:text-bone">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/15 dark:border-bone/15">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-mist">
                   <MapPin size={16} strokeWidth={1.5} />
                 </span>
                 <span className="pt-2 leading-snug">{architect.address}</span>
@@ -80,7 +80,7 @@ export function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
               >
                 <InstagramIcon size={16} />
               </a>
@@ -89,7 +89,7 @@ export function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
               >
                 <LinkedinIcon size={16} />
               </a>
@@ -98,7 +98,7 @@ export function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Behance"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
               >
                 <BehanceIcon size={16} />
               </a>
@@ -107,7 +107,7 @@ export function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X (Twitter)"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-gold hover:text-gold dark:border-bone/15"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-mist transition-colors hover:border-gold hover:text-gold"
               >
                 <XIcon size={16} />
               </a>

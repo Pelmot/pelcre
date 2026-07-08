@@ -1,6 +1,5 @@
 import type {
   Award,
-  FAQItem,
   Service,
   Skill,
   SoftwareItem,
@@ -11,7 +10,7 @@ import type {
 export const architect = {
   name: "Pelmot Creativity",
   studio: "Pelmot Creativity",
-  title: "Principal Architect",
+  title: "Junior Architect",
   tagline: "Architecture that listens to its site before it speaks.",
   location: "Based in Gaziantep, Turkey — working worldwide",
   email: "pelmot.creativity@gmail.com",
@@ -51,7 +50,7 @@ export const bio = {
 export const timeline: TimelineItem[] = [
   {
     year: "2011 — Present",
-    title: "Founder & Principal Architect",
+    title: "Founder & Junior Architect",
     place: "Pelmot Creativity, Gaziantep",
     description:
       "Leading a 14-person studio across residential, commercial, and landscape commissions in North America, Europe, and Asia.",
@@ -190,34 +189,6 @@ export const services: Service[] = [
       "Expert witness & design arbitration",
       "Studio & practice mentorship",
     ],
-  },
-];
-
-export const faqs: FAQItem[] = [
-  {
-    question: "What is the typical process for a new residential commission?",
-    answer:
-      "Every project begins with a site visit and a series of conversations to understand how you actually want to live, followed by concept design, design development, construction documentation, and construction administration. Most residential projects take 8–14 months from first meeting to permit-ready drawings, and 12–24 months to build.",
-  },
-  {
-    question: "Do you take on projects outside the United States?",
-    answer:
-      "Yes. Pelmot Creativity currently has completed or active work in the United States, Denmark, Portugal, Morocco, Japan, and Singapore. We typically partner with a local executive architect of record for projects outside North America.",
-  },
-  {
-    question: "What is your fee structure?",
-    answer:
-      "Fees are proposed as a percentage of construction cost for full architectural services, or as a fixed fee for interior design, consultation, and visualization work. A detailed proposal follows our initial feasibility conversation, tailored to project scope.",
-  },
-  {
-    question: "How many projects does the studio take on at once?",
-    answer:
-      "We intentionally limit the studio to six active commissions at a time, so that our team remains closely and personally involved in every project from concept through construction administration.",
-  },
-  {
-    question: "Can you work with our existing contractor or builder?",
-    answer:
-      "Absolutely. We regularly collaborate with clients' preferred contractors and can also recommend trusted builders from our own network if helpful.",
   },
 ];
 

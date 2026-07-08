@@ -30,16 +30,16 @@ export function Home() {
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
+        <div className="absolute inset-0 bg-ink/45" />
 
         <div className="container-lux relative z-10 pb-20 sm:pb-28">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6 text-xs font-medium tracking-[0.35em] text-gold-soft uppercase"
+            className="mb-6 inline-block rounded-full bg-[#9FA3AD] px-4 py-1.5 text-xs font-medium tracking-[0.35em] text-ink uppercase"
           >
-            {architect.studio} — Est. 2011
+            Abdurrazzak Jazmati — Est. 2023
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 32 }}
@@ -53,7 +53,7 @@ export function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 max-w-lg text-base leading-relaxed text-bone/75 sm:text-lg"
+            className="mt-7 max-w-lg text-base leading-relaxed text-mist sm:text-lg"
           >
             {architect.tagline} A studio designing houses, interiors, and
             landscapes that feel discovered rather than built.
@@ -74,7 +74,7 @@ export function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 1 }}
-          className="absolute right-8 bottom-8 hidden text-bone/60 sm:block"
+          className="absolute right-8 bottom-8 hidden text-mist sm:block"
         >
           <ChevronDown className="animate-bounce" size={22} strokeWidth={1.25} />
         </motion.div>
@@ -84,8 +84,7 @@ export function Home() {
       <section className="container-lux py-28 sm:py-36">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <p className="font-serif text-3xl leading-snug text-balance text-ink sm:text-4xl dark:text-bone">
-            "The best buildings feel less designed than discovered — as
-            though they were always meant to stand exactly where they do."
+            "Architecture begins, where engineering ends."
           </p>
           <p className="mt-6 text-sm font-medium tracking-[0.2em] text-stone uppercase">
             {architect.name}, {architect.title}
@@ -120,7 +119,7 @@ export function Home() {
       {/* About preview */}
       <section className="container-lux grid gap-16 pb-28 sm:pb-36 lg:grid-cols-2 lg:gap-24">
         <ScrollReveal>
-          <div className="relative aspect-4/5 overflow-hidden">
+          <div className="relative aspect-4/5 overflow-hidden rounded-lg border border-mist">
             <img
               src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=1400&q=80"
               alt="Reviewing architectural drawings in the studio"

@@ -4,7 +4,7 @@ import { ScrollReveal } from "./ScrollReveal";
 export function Timeline({ items }: { items: TimelineItem[] }) {
   return (
     <div className="relative">
-      <div className="absolute top-0 bottom-0 left-0 w-px bg-charcoal/15 dark:bg-bone/15 sm:left-[11rem]" />
+      <div className="absolute top-0 bottom-0 left-0 w-px bg-mist sm:left-[11rem]" />
       <div className="space-y-14">
         {items.map((item, i) => (
           <ScrollReveal key={item.title} delay={i * 0.05}>

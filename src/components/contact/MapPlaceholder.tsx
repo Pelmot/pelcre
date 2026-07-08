@@ -11,7 +11,7 @@ export function MapPlaceholder() {
       href={mapsUrl}
       target="_blank"
       rel="noreferrer"
-      className="group relative block h-full min-h-[320px] w-full overflow-hidden bg-linen dark:bg-ink-soft"
+      className="group relative block h-full min-h-[320px] w-full overflow-hidden rounded-lg border border-mist bg-linen dark:bg-ink-soft"
       aria-label="Open studio location in Google Maps"
     >
       <svg
@@ -21,7 +21,7 @@ export function MapPlaceholder() {
       >
         <defs>
           <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-            <path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-charcoal/40 dark:text-bone/30" />
+            <path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-mist" />
           </pattern>
         </defs>
         <rect width="400" height="300" fill="url(#grid)" />
@@ -30,7 +30,7 @@ export function MapPlaceholder() {
       </svg>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center transition-transform duration-500 group-hover:-translate-y-1">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ink text-bone shadow-lg dark:bg-bone dark:text-ink">
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ink text-bone shadow-sm dark:bg-bone dark:text-ink">
           <MapPin size={22} strokeWidth={1.5} />
         </span>
         <p className="font-serif text-lg text-ink dark:text-bone">

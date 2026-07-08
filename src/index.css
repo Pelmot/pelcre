@@ -15,16 +15,16 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   /* Neutral luxury palette */
-  --color-ink: #0f0e0c;
-  --color-ink-soft: #1a1815;
-  --color-charcoal: #3a372f;
-  --color-stone: #857f70;
-  --color-mist: #cbc5b6;
-  --color-linen: #f2ede3;
-  --color-paper: #faf8f3;
-  --color-bone: #eae4d6;
-  --color-gold: #a3854f;
-  --color-gold-soft: #c7ad78;
+  --color-ink: #3c3e4a;
+  --color-ink-soft: color-mix(in oklab, #3c3e4a 90%, #9fa3ad 10%);
+  --color-charcoal: #3c3e4a;
+  --color-stone: color-mix(in oklab, #3c3e4a 65%, #f3f1ec 35%);
+  --color-mist: #b6b8ab;
+  --color-linen: #e0dfd2;
+  --color-paper: #f3f1ec;
+  --color-bone: #f3f1ec;
+  --color-gold: #9fa3ad;
+  --color-gold-soft: #b6b8ab;
 
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -103,7 +103,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 1.5px solid var(--color-gold);
+  outline: 1.5px solid var(--color-ink);
   outline-offset: 3px;
 }
 

@@ -42,15 +42,15 @@ export function ProjectDetail() {
           transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
           src={project.heroImage}
           alt={project.title}
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
+          className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/10" />
+        <div className="absolute inset-0 bg-ink/40" />
 
         <div className="container-lux relative z-10 pb-16 sm:pb-20">
           <Link
             to="/projects"
-            className="mb-8 inline-flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-bone/70 uppercase transition-colors hover:text-bone"
+            className="mb-8 inline-flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-mist uppercase transition-colors hover:text-bone"
           >
             <ArrowLeft size={14} /> All Projects
           </Link>
@@ -66,7 +66,7 @@ export function ProjectDetail() {
       {/* Facts + description */}
       <section className="container-lux grid gap-16 py-28 sm:py-36 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
         <ScrollReveal>
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-charcoal/10 pt-8 sm:grid-cols-1 dark:border-bone/10">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-mist pt-8 sm:grid-cols-1">
             {facts.map((fact) => (
               <div key={fact.label}>
                 <dt className="text-xs font-medium tracking-[0.2em] text-stone uppercase">
@@ -130,7 +130,7 @@ export function ProjectDetail() {
         <ScrollRevealGroup className="grid gap-8 sm:grid-cols-2">
           {project.floorPlans.map((src, i) => (
             <ScrollRevealItem key={src + i}>
-              <div className="overflow-hidden bg-linen dark:bg-ink-soft">
+              <div className="overflow-hidden rounded-lg border border-mist bg-linen dark:bg-ink-soft">
                 <img
                   src={src}
                   alt={`${project.title} floor plan ${i + 1}`}
@@ -149,7 +149,7 @@ export function ProjectDetail() {
         <ScrollRevealGroup className="grid gap-8 sm:grid-cols-2">
           {project.renders.map((src, i) => (
             <ScrollRevealItem key={src + i}>
-              <div className="aspect-16/10 overflow-hidden bg-linen dark:bg-ink-soft">
+              <div className="aspect-16/10 overflow-hidden rounded-lg border border-mist bg-linen dark:bg-ink-soft">
                 <img
                   src={src}
                   alt={`${project.title} render ${i + 1}`}
@@ -165,7 +165,7 @@ export function ProjectDetail() {
       {/* Materials */}
       <section className="container-lux pb-28 sm:pb-36">
         <SectionTitle eyebrow="Specification" title="Materials" className="mb-14" />
-        <div className="divide-y divide-charcoal/10 border-t border-b border-charcoal/10 dark:divide-bone/10 dark:border-bone/10">
+        <div className="divide-y divide-mist border-t border-b border-mist">
           {project.materials.map((material, i) => (
             <ScrollReveal key={material.name} delay={i * 0.04}>
               <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-baseline sm:justify-between">
@@ -200,7 +200,7 @@ export function ProjectDetail() {
           <h2 className="font-serif text-4xl text-bone sm:text-6xl">
             {nextProject.title}
           </h2>
-          <span className="mt-6 flex h-12 w-12 items-center justify-center rounded-full border border-bone/40 text-bone transition-transform duration-500 group-hover:translate-x-2">
+          <span className="mt-6 flex h-12 w-12 items-center justify-center rounded-full border border-mist text-bone transition-transform duration-500 group-hover:translate-x-2">
             <ArrowRight size={18} />
           </span>
         </div>

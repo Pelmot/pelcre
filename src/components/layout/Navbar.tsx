@@ -31,8 +31,8 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
         solid
-          ? "bg-paper/90 shadow-[0_1px_0_0_rgba(0,0,0,0.06)] backdrop-blur-md dark:bg-ink/90 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
-          : "bg-transparent",
+          ? "border-b border-mist bg-paper dark:bg-ink"
+          : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="container-lux flex h-20 items-center justify-between sm:h-24">
@@ -70,7 +70,7 @@ export function Navbar() {
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-full border transition-colors",
               solid
-                ? "border-charcoal/20 text-charcoal hover:border-gold hover:text-gold dark:border-bone/20 dark:text-bone"
+                ? "border-mist text-charcoal hover:border-gold hover:text-gold dark:text-bone"
                 : "border-paper/30 text-paper hover:border-paper",
             )}
           >
@@ -85,7 +85,7 @@ export function Navbar() {
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-full border",
               solid
-                ? "border-charcoal/20 text-charcoal dark:border-bone/20 dark:text-bone"
+                ? "border-mist text-charcoal dark:text-bone"
                 : "border-paper/30 text-paper",
             )}
           >
