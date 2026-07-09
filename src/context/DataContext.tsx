@@ -117,6 +117,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
           title: settings.title,
           tagline: settings.tagline,
           location: settings.location,
+          photo: imageUrl(settings.founderPhoto, 1400),
           email: settings.email,
           phone: settings.phone,
           address: settings.address,

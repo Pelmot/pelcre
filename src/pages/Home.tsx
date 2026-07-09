@@ -123,8 +123,8 @@ export function Home() {
         <ScrollReveal>
           <div className="relative aspect-4/5 overflow-hidden rounded-lg border border-mist">
             <img
-              src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=1400&q=80"
-              alt="Reviewing architectural drawings in the studio"
+              src={architect.photo}
+              alt={architect.name}
               loading="lazy"
               className="h-full w-full object-cover"
             />

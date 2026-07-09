@@ -89,6 +89,7 @@ export interface Architect {
   title: string;
   tagline: string;
   location: string;
+  photo: string;
   email: string;
   phone: string;
   address: string;
