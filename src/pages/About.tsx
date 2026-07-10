@@ -113,6 +113,57 @@ function SoftwareSection({
   );
 }
 
+// Rendered instead of SkillsSection + SoftwareSection whenever the two sit next to each
+// other in sectionOrder.about, so they keep sharing one side-by-side row (matching the
+// original design) rather than each taking a full-width section of their own.
+function SkillsAndSoftwareSection({
+  skillsFirst,
+  skillsEyebrow,
+  skillsTitle,
+  skills,
+  softwareEyebrow,
+  softwareTitle,
+  softwareDescription,
+  software,
+}: {
+  skillsFirst: boolean;
+  skillsEyebrow: string;
+  skillsTitle: string;
+  skills: Skill[];
+  softwareEyebrow: string;
+  softwareTitle: string;
+  softwareDescription: string;
+  software: SoftwareItem[];
+}) {
+  const skillsColumn = (
+    <div>
+      <SectionTitle eyebrow={skillsEyebrow} title={skillsTitle} className="mb-12" />
+      <SkillBars skills={skills} />
+    </div>
+  );
+  const softwareColumn = (
+    <div>
+      <SectionTitle
+        eyebrow={softwareEyebrow}
+        title={softwareTitle}
+        description={softwareDescription}
+        className="mb-12"
+      />
+    </div>
+  );
+  return (
+    <section className="container-lux py-28 sm:py-36">
+      <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+        {skillsFirst ? skillsColumn : softwareColumn}
+        {skillsFirst ? softwareColumn : skillsColumn}
+      </div>
+      <div className="mt-4">
+        <SoftwareGrid items={software} />
+      </div>
+    </section>
+  );
+}
+
 function AwardsSection({ eyebrow, title, awards }: { eyebrow: string; title: string; awards: Award[] }) {
   return (
     <section className="container-lux py-28 sm:py-36">
@@ -142,73 +193,108 @@ export function About() {
         image={heroImages.about || ABOUT_HERO_FALLBACK}
       />
 
-      {sectionOrder.about.map((type, i) => {
-        const key = `${type}-${i}`;
-        switch (type) {
-          case "aboutBiographySection":
-            return (
-              <BiographySection
-                key={key}
-                founderPhoto={architect.founderPhoto}
-                portraitAlt={t("about.portraitAlt", { name: architect.name })}
-                biographyEyebrow={pc.biography || t("about.biography")}
-                headline={pc.designAsAct || t("about.designAsAct")}
-                paragraphs={bio.paragraphs}
-                philosophyEyebrow={pc.designPhilosophy || t("about.designPhilosophy")}
-                philosophy={bio.philosophy}
-              />
-            );
-          case "aboutTimelineSection":
-            return (
-              <TimelineSection
-                key={key}
-                eyebrow={pc.career || t("about.career")}
-                title={pc.experienceEducation || t("about.experienceEducation")}
-                items={timeline}
-              />
-            );
-          case "aboutSkillsSection":
-            return (
-              <SkillsSection
-                key={key}
-                eyebrow={pc.expertise || t("about.expertise")}
-                title={pc.coreSkills || t("about.coreSkills")}
+      {(() => {
+        const nodes = [];
+        const order = sectionOrder.about;
+        for (let i = 0; i < order.length; i++) {
+          const type = order[i];
+          const next = order[i + 1];
+          const key = `${type}-${i}`;
+
+          // Keep Skills and Software side by side (like the original layout) whenever
+          // they're next to each other in the order, in whichever direction.
+          if (
+            (type === "aboutSkillsSection" && next === "aboutSoftwareSection") ||
+            (type === "aboutSoftwareSection" && next === "aboutSkillsSection")
+          ) {
+            nodes.push(
+              <SkillsAndSoftwareSection
+                key={`${type}-${next}-${i}`}
+                skillsFirst={type === "aboutSkillsSection"}
+                skillsEyebrow={pc.expertise || t("about.expertise")}
+                skillsTitle={pc.coreSkills || t("about.coreSkills")}
                 skills={skills}
-              />
+                softwareEyebrow={pc.toolkit || t("about.toolkit")}
+                softwareTitle={pc.softwareTitle || t("about.softwareTitle")}
+                softwareDescription={pc.softwareDescription || t("about.softwareDescription")}
+                software={software}
+              />,
             );
-          case "aboutSoftwareSection":
-            return (
-              <SoftwareSection
-                key={key}
-                eyebrow={pc.toolkit || t("about.toolkit")}
-                title={pc.softwareTitle || t("about.softwareTitle")}
-                description={pc.softwareDescription || t("about.softwareDescription")}
-                items={software}
-              />
-            );
-          case "aboutAwardsSection":
-            return (
-              <AwardsSection
-                key={key}
-                eyebrow={pc.recognition || t("about.recognition")}
-                title={pc.awardsTitle || t("about.awardsTitle")}
-                awards={awards}
-              />
-            );
-          case "aboutCtaSection":
-            return (
-              <CTASection
-                key={key}
-                title={pc.ctaTitle || t("about.ctaTitle")}
-                description={pc.ctaDescription || t("about.ctaDescription")}
-                buttonLabel={t("about.startAProject")}
-                buttonTo="/contact"
-              />
-            );
-          default:
-            return null;
+            i++;
+            continue;
+          }
+
+          switch (type) {
+            case "aboutBiographySection":
+              nodes.push(
+                <BiographySection
+                  key={key}
+                  founderPhoto={architect.founderPhoto}
+                  portraitAlt={t("about.portraitAlt", { name: architect.name })}
+                  biographyEyebrow={pc.biography || t("about.biography")}
+                  headline={pc.designAsAct || t("about.designAsAct")}
+                  paragraphs={bio.paragraphs}
+                  philosophyEyebrow={pc.designPhilosophy || t("about.designPhilosophy")}
+                  philosophy={bio.philosophy}
+                />,
+              );
+              break;
+            case "aboutTimelineSection":
+              nodes.push(
+                <TimelineSection
+                  key={key}
+                  eyebrow={pc.career || t("about.career")}
+                  title={pc.experienceEducation || t("about.experienceEducation")}
+                  items={timeline}
+                />,
+              );
+              break;
+            case "aboutSkillsSection":
+              nodes.push(
+                <SkillsSection
+                  key={key}
+                  eyebrow={pc.expertise || t("about.expertise")}
+                  title={pc.coreSkills || t("about.coreSkills")}
+                  skills={skills}
+                />,
+              );
+              break;
+            case "aboutSoftwareSection":
+              nodes.push(
+                <SoftwareSection
+                  key={key}
+                  eyebrow={pc.toolkit || t("about.toolkit")}
+                  title={pc.softwareTitle || t("about.softwareTitle")}
+                  description={pc.softwareDescription || t("about.softwareDescription")}
+                  items={software}
+                />,
+              );
+              break;
+            case "aboutAwardsSection":
+              nodes.push(
+                <AwardsSection
+                  key={key}
+                  eyebrow={pc.recognition || t("about.recognition")}
+                  title={pc.awardsTitle || t("about.awardsTitle")}
+                  awards={awards}
+                />,
+              );
+              break;
+            case "aboutCtaSection":
+              nodes.push(
+                <CTASection
+                  key={key}
+                  title={pc.ctaTitle || t("about.ctaTitle")}
+                  description={pc.ctaDescription || t("about.ctaDescription")}
+                  buttonLabel={t("about.startAProject")}
+                  buttonTo="/contact"
+                />,
+              );
+              break;
+          }
         }
-      })}
+        return nodes;
+      })()}
     </>
   );
 }
