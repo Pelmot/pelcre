@@ -15,7 +15,8 @@ const ABOUT_HERO_FALLBACK =
 
 export function About() {
   const { t } = useTranslation();
-  const { architect, heroImages, bio, timeline, skills, software, awards } = useSiteData();
+  const { architect, heroImages, pageContent, bio, timeline, skills, software, awards } = useSiteData();
+  const pc = pageContent.about;
 
   return (
     <>
@@ -25,7 +26,7 @@ export function About() {
       />
 
       <PageHero
-        eyebrow={t("about.aboutTheStudio")}
+        eyebrow={pc.aboutTheStudio || t("about.aboutTheStudio")}
         title={architect.name}
         description={`${architect.title} — ${architect.location}`}
         image={heroImages.about || ABOUT_HERO_FALLBACK}
@@ -47,10 +48,10 @@ export function About() {
         </ScrollReveal>
         <div>
           <p className="mb-4 text-xs font-medium tracking-[0.3em] text-stone uppercase">
-            {t("about.biography")}
+            {pc.biography || t("about.biography")}
           </p>
           <h2 className="font-serif text-4xl leading-[1.1] font-medium text-balance text-ink sm:text-5xl dark:text-bone">
-            {t("about.designAsAct")}
+            {pc.designAsAct || t("about.designAsAct")}
           </h2>
           <div className="mt-8 space-y-6">
             {bio.paragraphs.map((p) => (
@@ -62,7 +63,7 @@ export function About() {
 
           <div className="mt-16">
             <p className="mb-8 text-xs font-medium tracking-[0.3em] text-stone uppercase">
-              {t("about.designPhilosophy")}
+              {pc.designPhilosophy || t("about.designPhilosophy")}
             </p>
             <ScrollRevealGroup className="grid gap-8 sm:grid-cols-3">
               {bio.philosophy.map((item) => (
@@ -84,8 +85,8 @@ export function About() {
       <section className="bg-linen py-28 sm:py-36 dark:bg-ink-soft">
         <div className="container-lux">
           <SectionTitle
-            eyebrow={t("about.career")}
-            title={t("about.experienceEducation")}
+            eyebrow={pc.career || t("about.career")}
+            title={pc.experienceEducation || t("about.experienceEducation")}
             className="mb-16"
           />
           <Timeline items={timeline} />
@@ -96,14 +97,18 @@ export function About() {
       <section className="container-lux py-28 sm:py-36">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
-            <SectionTitle eyebrow={t("about.expertise")} title={t("about.coreSkills")} className="mb-12" />
+            <SectionTitle
+              eyebrow={pc.expertise || t("about.expertise")}
+              title={pc.coreSkills || t("about.coreSkills")}
+              className="mb-12"
+            />
             <SkillBars skills={skills} />
           </div>
           <div>
             <SectionTitle
-              eyebrow={t("about.toolkit")}
-              title={t("about.softwareTitle")}
-              description={t("about.softwareDescription")}
+              eyebrow={pc.toolkit || t("about.toolkit")}
+              title={pc.softwareTitle || t("about.softwareTitle")}
+              description={pc.softwareDescription || t("about.softwareDescription")}
               className="mb-12"
             />
           </div>
@@ -115,13 +120,17 @@ export function About() {
 
       {/* Awards */}
       <section className="container-lux pb-28 sm:pb-36">
-        <SectionTitle eyebrow={t("about.recognition")} title={t("about.awardsTitle")} className="mb-14" />
+        <SectionTitle
+          eyebrow={pc.recognition || t("about.recognition")}
+          title={pc.awardsTitle || t("about.awardsTitle")}
+          className="mb-14"
+        />
         <AwardsList awards={awards} />
       </section>
 
       <CTASection
-        title={t("about.ctaTitle")}
-        description={t("about.ctaDescription")}
+        title={pc.ctaTitle || t("about.ctaTitle")}
+        description={pc.ctaDescription || t("about.ctaDescription")}
         buttonLabel={t("about.startAProject")}
         buttonTo="/contact"
       />

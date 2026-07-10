@@ -15,7 +15,8 @@ const HOME_HERO_FALLBACK =
 
 export function Home() {
   const { t } = useTranslation();
-  const { architect, heroImages, bio, testimonials, projects } = useSiteData();
+  const { architect, heroImages, pageContent, bio, testimonials, projects } = useSiteData();
+  const pc = pageContent.home;
   const featuredProjects = projects.filter((p) => p.featured);
   const heroImage = heroImages.home || HOME_HERO_FALLBACK;
 
@@ -47,7 +48,7 @@ export function Home() {
             transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="mb-6 inline-block rounded-full bg-[#9FA3AD] px-4 py-1.5 text-xs font-medium tracking-[0.35em] text-ink uppercase"
           >
-            {t("home.heroBadge")}
+            {pc.heroBadge || t("home.heroBadge")}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 32 }}
@@ -63,7 +64,7 @@ export function Home() {
             transition={{ duration: 1, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="mt-7 max-w-lg text-base leading-relaxed text-mist sm:text-lg"
           >
-            {architect.tagline} {t("home.heroTaglineSuffix")}
+            {architect.tagline} {pc.heroTaglineSuffix || t("home.heroTaglineSuffix")}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +92,7 @@ export function Home() {
       <section className="container-lux py-28 sm:py-36">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <p className="font-serif text-3xl leading-snug text-balance text-ink sm:text-4xl dark:text-bone">
-            "{t("home.quote")}"
+            "{pc.quote || t("home.quote")}"
           </p>
           <p className="mt-6 text-sm font-medium tracking-[0.2em] text-stone uppercase">
             {architect.name}, {architect.title}
@@ -103,9 +104,9 @@ export function Home() {
       <section className="container-lux pb-28 sm:pb-36">
         <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
           <SectionTitle
-            eyebrow={t("home.selectedWork")}
-            title={t("home.featuredProjectsTitle")}
-            description={t("home.featuredProjectsDescription")}
+            eyebrow={pc.selectedWork || t("home.selectedWork")}
+            title={pc.featuredProjectsTitle || t("home.featuredProjectsTitle")}
+            description={pc.featuredProjectsDescription || t("home.featuredProjectsDescription")}
           />
           <ScrollReveal delay={0.15}>
             <Button to="/projects" variant="outline" className="text-ink dark:text-bone">
@@ -137,10 +138,10 @@ export function Home() {
         </ScrollReveal>
         <ScrollReveal delay={0.1} className="flex flex-col justify-center">
           <p className="mb-4 text-xs font-medium tracking-[0.3em] text-stone uppercase">
-            {t("home.theStudio")}
+            {pc.theStudio || t("home.theStudio")}
           </p>
           <h2 className="font-serif text-4xl leading-[1.1] font-medium text-balance text-ink sm:text-5xl dark:text-bone">
-            {t("home.studioHeading")}
+            {pc.studioHeading || t("home.studioHeading")}
           </h2>
           <p className="mt-6 max-w-md leading-relaxed text-stone">
             {bio.paragraphs[0]}
@@ -162,9 +163,9 @@ export function Home() {
 
       {/* Contact preview */}
       <CTASection
-        eyebrow={t("home.ctaEyebrow")}
-        title={t("home.ctaTitle")}
-        description={t("home.ctaDescription")}
+        eyebrow={pc.ctaEyebrow || t("home.ctaEyebrow")}
+        title={pc.ctaTitle || t("home.ctaTitle")}
+        description={pc.ctaDescription || t("home.ctaDescription")}
         buttonLabel={t("home.getInTouch")}
         buttonTo="/contact"
       />

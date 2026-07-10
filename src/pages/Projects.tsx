@@ -14,7 +14,8 @@ const PROJECTS_HERO_FALLBACK =
 
 export function Projects() {
   const { t } = useTranslation();
-  const { projects, heroImages } = useSiteData();
+  const { projects, heroImages, pageContent } = useSiteData();
+  const pc = pageContent.projects;
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") as ProjectCategory | null;
   const [active, setActive] = useState<ProjectCategory | "All">(
@@ -58,9 +59,9 @@ export function Projects() {
       />
 
       <PageHero
-        eyebrow={t("projects.portfolio")}
-        title={t("projects.selectedProjects")}
-        description={t("projects.description")}
+        eyebrow={pc.portfolio || t("projects.portfolio")}
+        title={pc.selectedProjects || t("projects.selectedProjects")}
+        description={pc.description || t("projects.description")}
         image={heroImages.projects || PROJECTS_HERO_FALLBACK}
         short
       />

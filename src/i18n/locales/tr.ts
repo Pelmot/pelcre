@@ -70,7 +70,7 @@ const tr: TranslationSchema = {
       "Pelmot Creativity hakkında bilgi edinin — tasarım felsefemiz, deneyimimiz, eğitimimiz ve ödüllerimiz.",
     aboutTheStudio: "Stüdyo Hakkında",
     biography: "Biyografi",
-    designAsAct: "Tasarım, bir dinleme eylemidir.",
+    designAsAct: "Tasarım, içinden geçtiğimiz her şeyin ruhudur.",
     designPhilosophy: "Tasarım Felsefesi",
     career: "Kariyer",
     experienceEducation: "Deneyim & Eğitim",

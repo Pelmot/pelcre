@@ -70,7 +70,7 @@ const ar: TranslationSchema = {
       "تعرف على بيلموت كرييتيفيتي — فلسفتنا التصميمية وخبرتنا وتعليمنا وجوائزنا.",
     aboutTheStudio: "عن الاستوديو",
     biography: "السيرة الذاتية",
-    designAsAct: "التصميم فعل إصغاء.",
+    designAsAct: "التصميم هو روح كل ما نمر به.",
     designPhilosophy: "فلسفة التصميم",
     career: "المسيرة المهنية",
     experienceEducation: "الخبرة والتعليم",

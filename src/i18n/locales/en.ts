@@ -68,7 +68,7 @@ const en = {
       "Learn about Pelmot Creativity — our design philosophy, experience, education, and awards.",
     aboutTheStudio: "About the Studio",
     biography: "Biography",
-    designAsAct: "Design as an act of listening.",
+    designAsAct: "Design is the soul of what we go through.",
     designPhilosophy: "Design Philosophy",
     career: "Career",
     experienceEducation: "Experience & Education",

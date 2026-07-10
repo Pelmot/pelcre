@@ -18,7 +18,8 @@ const CONTACT_HERO_FALLBACK =
 
 export function Contact() {
   const { t } = useTranslation();
-  const { architect, heroImages } = useSiteData();
+  const { architect, heroImages, pageContent } = useSiteData();
+  const pc = pageContent.contact;
 
   return (
     <>
@@ -28,9 +29,9 @@ export function Contact() {
       />
 
       <PageHero
-        eyebrow={t("contact.getInTouch")}
-        title={t("contact.letsStart")}
-        description={t("contact.description")}
+        eyebrow={pc.getInTouch || t("contact.getInTouch")}
+        title={pc.letsStart || t("contact.letsStart")}
+        description={pc.description || t("contact.description")}
         image={heroImages.contact || CONTACT_HERO_FALLBACK}
         short
       />
@@ -43,7 +44,7 @@ export function Contact() {
         <div className="space-y-10">
           <ScrollReveal delay={0.05}>
             <p className="mb-6 text-xs font-medium tracking-[0.2em] text-stone uppercase">
-              {t("contact.contactDetails")}
+              {pc.contactDetails || t("contact.contactDetails")}
             </p>
             <ul className="space-y-5">
               <li>
@@ -79,7 +80,7 @@ export function Contact() {
 
           <ScrollReveal delay={0.1}>
             <p className="mb-4 text-xs font-medium tracking-[0.2em] text-stone uppercase">
-              {t("contact.followTheStudio")}
+              {pc.followTheStudio || t("contact.followTheStudio")}
             </p>
             <div className="flex gap-3">
               <a

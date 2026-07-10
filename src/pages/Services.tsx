@@ -22,7 +22,8 @@ const SERVICES_HERO_FALLBACK =
 
 export function Services() {
   const { t } = useTranslation();
-  const { services, heroImages } = useSiteData();
+  const { services, heroImages, pageContent } = useSiteData();
+  const pc = pageContent.services;
 
   return (
     <>
@@ -32,9 +33,9 @@ export function Services() {
       />
 
       <PageHero
-        eyebrow={t("services.whatWeDo")}
-        title={t("services.title")}
-        description={t("services.description")}
+        eyebrow={pc.whatWeDo || t("services.whatWeDo")}
+        title={pc.title || t("services.title")}
+        description={pc.description || t("services.description")}
         image={heroImages.services || SERVICES_HERO_FALLBACK}
         short
       />
@@ -86,8 +87,8 @@ export function Services() {
       </section>
 
       <CTASection
-        title={t("services.ctaTitle")}
-        description={t("services.ctaDescription")}
+        title={pc.ctaTitle || t("services.ctaTitle")}
+        description={pc.ctaDescription || t("services.ctaDescription")}
         buttonLabel={t("services.bookConsultation")}
         buttonTo="/contact"
       />

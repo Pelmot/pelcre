@@ -115,9 +115,72 @@ export interface Bio {
   philosophy: Philosophy[];
 }
 
+export interface HomePageContent {
+  heroBadge: string;
+  heroTaglineSuffix: string;
+  quote: string;
+  selectedWork: string;
+  featuredProjectsTitle: string;
+  featuredProjectsDescription: string;
+  theStudio: string;
+  studioHeading: string;
+  ctaEyebrow: string;
+  ctaTitle: string;
+  ctaDescription: string;
+}
+
+export interface AboutPageContent {
+  aboutTheStudio: string;
+  biography: string;
+  designAsAct: string;
+  designPhilosophy: string;
+  career: string;
+  experienceEducation: string;
+  expertise: string;
+  coreSkills: string;
+  toolkit: string;
+  softwareTitle: string;
+  softwareDescription: string;
+  recognition: string;
+  awardsTitle: string;
+  ctaTitle: string;
+  ctaDescription: string;
+}
+
+export interface ServicesPageContent {
+  whatWeDo: string;
+  title: string;
+  description: string;
+  ctaTitle: string;
+  ctaDescription: string;
+}
+
+export interface ProjectsPageContent {
+  portfolio: string;
+  selectedProjects: string;
+  description: string;
+}
+
+export interface ContactPageContent {
+  getInTouch: string;
+  letsStart: string;
+  description: string;
+  contactDetails: string;
+  followTheStudio: string;
+}
+
+export interface PageContent {
+  home: HomePageContent;
+  about: AboutPageContent;
+  services: ServicesPageContent;
+  projects: ProjectsPageContent;
+  contact: ContactPageContent;
+}
+
 export interface SiteData {
   architect: Architect;
   heroImages: HeroImages;
+  pageContent: PageContent;
   bio: Bio;
   timeline: TimelineItem[];
   skills: Skill[];
