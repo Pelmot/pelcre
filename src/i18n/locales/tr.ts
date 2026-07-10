@@ -52,8 +52,7 @@ const tr: TranslationSchema = {
     viewProjects: "Projeleri Gör",
     selectedWork: "Seçilmiş Çalışmalar",
     featuredProjectsTitle: "Öne Çıkan Projeler",
-    featuredProjectsDescription:
-      "Son dönemde tamamlanan konut, ticari ve kamusal peyzaj projelerinden bir kesit.",
+    featuredProjectsDescription: "",
     allProjects: "Tüm Projeler",
     theStudio: "Stüdyo",
     studioHeading: "On dört yıllık sakin ve özenli mimarlık.",

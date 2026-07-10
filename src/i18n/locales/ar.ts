@@ -52,8 +52,7 @@ const ar: TranslationSchema = {
     viewProjects: "عرض المشاريع",
     selectedWork: "أعمال مختارة",
     featuredProjectsTitle: "مشاريع مميزة",
-    featuredProjectsDescription:
-      "مجموعة من أحدث الأعمال السكنية والتجارية ومشاريع المناظر الطبيعية العامة.",
+    featuredProjectsDescription: "",
     allProjects: "كل المشاريع",
     theStudio: "الاستوديو",
     studioHeading: "أربعة عشر عامًا من العمارة الهادئة والمتأنية.",

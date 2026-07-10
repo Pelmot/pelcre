@@ -50,8 +50,7 @@ const en = {
     viewProjects: "View Projects",
     selectedWork: "Selected Work",
     featuredProjectsTitle: "Featured Projects",
-    featuredProjectsDescription:
-      "A cross-section of recent residential, commercial, and public landscape commissions.",
+    featuredProjectsDescription: "",
     allProjects: "All Projects",
     theStudio: "The Studio",
     studioHeading: "Fourteen years of quiet, deliberate architecture.",

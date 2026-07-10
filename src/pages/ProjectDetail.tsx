@@ -107,28 +107,6 @@ export function ProjectDetail() {
         </section>
       )}
 
-      {/* Challenge & Solution */}
-      <section className="bg-linen py-28 sm:py-36 dark:bg-ink-soft">
-        <div className="container-lux grid gap-12 sm:grid-cols-2 sm:gap-16">
-          <ScrollReveal>
-            <p className="mb-4 text-xs font-medium tracking-[0.3em] text-gold uppercase">
-              {t("projectDetail.theChallenge")}
-            </p>
-            <p className="font-serif text-2xl leading-snug text-balance text-ink sm:text-3xl dark:text-bone">
-              {project.challenge}
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="mb-4 text-xs font-medium tracking-[0.3em] text-gold uppercase">
-              {t("projectDetail.theSolution")}
-            </p>
-            <p className="font-serif text-2xl leading-snug text-balance text-ink sm:text-3xl dark:text-bone">
-              {project.solution}
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Floor plans */}
       {project.floorPlans.length > 0 && (
         <section className="container-lux py-28 sm:py-36">
