@@ -149,7 +149,7 @@ function buildSiteData(
       studio: settings.name,
       title: pickLocale(settings.title, lang),
       tagline: pickLocale(settings.tagline, lang),
-      location: settings.location,
+      location: pickLocale(settings.location, lang),
       founderPhoto: imageUrl(settings.founderPhoto, 1400),
       studioPhoto: imageUrl(settings.studioPhoto, 1400),
       email: settings.email,
