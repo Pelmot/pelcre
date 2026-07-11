@@ -13,6 +13,7 @@ dist-ssr
 *.local
 .wrangler
 public/sitemap.xml
+worker-configuration.d.ts
 
 # Editor directories and files
 .vscode/*
