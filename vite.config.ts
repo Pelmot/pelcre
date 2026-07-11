@@ -13,4 +13,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
   },
+  server: {
+    port: process.env.PORT ? Number(process.env.PORT) : 5173,
+  },
 })
