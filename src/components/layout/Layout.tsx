@@ -1,9 +1,11 @@
+import { Suspense } from "react";
 import { useOutlet, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { BackToTop } from "./BackToTop";
 import { ScrollToTop } from "./ScrollToTop";
+import { PageLoader } from "@/components/ui/PageLoader";
 import { cn } from "@/lib/cn";
 
 // Evenly spaced from top to bottom of the full page so the accent runs the whole way
@@ -39,18 +41,26 @@ export function Layout() {
       </div>
       <ScrollToTop />
       <Navbar />
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.main
-          key={location.pathname}
-          className="flex-1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {outlet}
-        </motion.main>
-      </AnimatePresence>
+      {/*
+        No AnimatePresence here — its exit/enter choreography relies on tracking mount
+        state via effects, which gets corrupted the moment the entering child is a lazy
+        route that suspends mid-transition (confirmed: both the old and new <main> end up
+        stuck at their starting opacity forever, one visible, one not — not a timing issue,
+        a genuinely broken state). A plain mount-triggered fade-in doesn't have that
+        problem: React just unmounts the old `main` and mounts the new one on key change,
+        Suspense shows PageLoader inside it until the chunk resolves, and the fade-in plays
+        once it does. No exit animation for the outgoing page, but a working site beats a
+        broken animation.
+      */}
+      <motion.main
+        key={location.pathname}
+        className="flex-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Suspense fallback={<PageLoader />}>{outlet}</Suspense>
+      </motion.main>
       <Footer />
       <BackToTop />
     </div>
