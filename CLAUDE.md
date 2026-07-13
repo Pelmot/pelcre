@@ -4,11 +4,19 @@ Architecture portfolio site for **Pelmot Creativity** (real person behind it: Ab
 
 ## Live URLs
 
-- **Live site**: https://pelcre.myworkss.workers.dev
+- **Live site**: https://pelmot-creativity.com (also responds on https://www.pelmot-creativity.com and the legacy https://pelcre.myworkss.workers.dev)
 - **Content editor (Sanity Studio)**: https://pelmot-creativity.sanity.studio/ — log in with GitHub (reiw9 / tala.wj@gmail.com)
 - **GitHub repo**: https://github.com/reiw9/pelcre (branch `main`)
 - **Web3Forms dashboard** (contact form submissions): https://web3forms.com — signed up with pelmot.creativity@gmail.com
-- **Cloudflare Web Analytics**: Cloudflare dashboard → Analytics & Logs → Web Analytics
+- **Cloudflare Web Analytics**: Cloudflare dashboard → Analytics & Logs → Web Analytics (under the `pelmot.creativity@gmail.com` account — see Cloudflare account note below)
+
+## Cloudflare account
+
+As of 2026-07-13 the Worker deploys to a **different Cloudflare account than it used to** — `pelmot.creativity@gmail.com`'s account (ID `1e8a536df4e8ff6fbf2d1306f3b128c4`), not the original `reiw`/`tala.wj@gmail.com` account. `wrangler.jsonc` pins `account_id` explicitly so `wrangler deploy` always targets the right one regardless of which account the local CLI happens to be logged into. The `pelmot-creativity.com` domain was bought directly through Cloudflare Registrar under the new account, so its DNS zone was already there — no nameserver migration was needed, just `wrangler deploy` with `routes` (`custom_domain: true`) for the apex and `www` in `wrangler.jsonc`.
+
+- **The old account's Worker** (`pelcre.myworkss.workers.dev` under `reiw`) was left running as-is, not deleted — it's serving stale content frozen at whatever was last deployed there before the migration. Revisit whether to delete it or redirect it to the new domain.
+- **Cloudflare Web Analytics beacon token** in `index.html` is still the one registered under the *old* account for `pelcre.myworkss.workers.dev` — it needs to be regenerated under the new account for `pelmot-creativity.com` (Cloudflare dashboard → new account → Analytics & Logs → Web Analytics → add site) and swapped into `index.html`'s `data-cf-beacon` token. Not yet done.
+- Cloudflare Turnstile (bot protection for the contact form) had been deferred pending exactly this account move, since Turnstile widgets + their verification Worker are tied to the specific Cloudflare account they're created in — it can now be set up for real under the new account if wanted.
 
 ## Stack
 
@@ -47,7 +55,7 @@ All content (projects, bio, services, timeline, skills, software, awards, testim
 - **Project categories (owner-managed taxonomy)**: `project.category` is a `reference` to a `projectCategory` document (own document type, fields: `name` as `localeString`, `order` as `number`) instead of a fixed 5-value string enum — the owner can rename, add, remove, or reorder categories entirely from Studio (create/delete `Project Category` documents, edit `order` to control filter-pill position) with no code changes. `DataContext.tsx`'s `CATEGORIES_QUERY` (`*[_type == "projectCategory"] | order(order asc)`) feeds `SiteData.categories: Category[]` (`{id, name}`, `id` = the category document's `_id`, `name` already localized). `Project.category` holds that same `id` (for filtering/matching, mirroring the old canonical-enum convention) and `Project.categoryName` holds the pre-resolved localized label (mirrors every other already-resolved `Project` field). `ProjectFilter`/`Projects.tsx`/`Footer.tsx` all render from the live `categories` list rather than a hardcoded array — deleting a category document removes its filter pill and footer link automatically; projects still referencing a deleted category just won't match any filter (no crash, `mapProject` falls back to `""`/empty category if the reference is broken). The old `categories.*` i18n dictionary keys (`en/tr/ar.ts`) still exist but are no longer used anywhere in the app (the contact form's "Project type" field that used them was removed) — safe to delete if ever cleaning up, just not done yet.
 - **Per-page SEO (title/description, editable from Studio)**: `siteSettings.pageContent.<page>.seoTitle`/`.seoDescription` (added to the same five `pageContent` groups as the headings) feed each page's `<SEO title=... description=...>` call, with the i18n `<page>.seoTitle`/`.seoDescription` value as the fallback — identical pattern to every other `pageContent` field. `src/components/ui/SEO.tsx` (via `react-helmet-async`) sets `<title>`, meta description, canonical URL, and full OG/Twitter Card tags per route. **About/Services/Projects/Contact now also pass `image={heroImages.X || FALLBACK}` to `<SEO>`** (previously only Home did — the others silently fell back to `SEO.tsx`'s generic `DEFAULT_OG_IMAGE`, not their actual hero photo).
 - **`index.html` has no page-specific static SEO tags** — `<meta name="description">`, `og:title`, `og:description`, `og:image`, and the duplicate `twitter:card` were removed from the static `<head>` on 2026-07-10. They used to hardcode Home's copy, and because `react-helmet-async` *appends* its per-page tags rather than replacing pre-existing static ones, every non-Home route ended up with two `<meta name="description">`/`og:image` elements in the DOM — the stale Home-hardcoded one always first, so anything reading "the" meta tag (most OG scrapers, `document.querySelector`) silently got Home's data regardless of which page was actually being shared/crawled. `index.html` now only keeps genuinely page-independent tags (`<title>` as a pre-hydration fallback — safe because `document.title` is a single overwritable property, not a duplicable element — plus charset/viewport/theme-color/favicon/author/og:type/color-scheme). **If you ever add a new site-wide meta tag, add it to `SEO.tsx` (so every route gets it), not to `index.html`'s static `<head>`** — anything page-specific added there will silently shadow the real per-page value the same way.
-- CORS is configured on the Sanity project for `http://localhost:5173` (dev) and `https://pelcre.myworkss.workers.dev` (prod). If the site moves to a new domain, add it via the Sanity MCP `add_cors_origin` tool or sanity.io/manage.
+- CORS is configured on the Sanity project for `http://localhost:5173` (dev), `https://pelmot-creativity.com` and `https://www.pelmot-creativity.com` (prod), plus the legacy `https://pelcre.myworkss.workers.dev` (kept in case that old Worker is still reachable — see Cloudflare account note above). If the site moves to a new domain again, add it via the Sanity MCP `add_cors_origin` tool or sanity.io/manage.
 
 **Current gap**: real project gallery/floor-plan/render photos still need uploading by the site owner through Sanity Studio (Founder Photo and Studio Photo have been wired up and may already be uploaded — check before assuming they're still placeholders).
 
@@ -99,7 +107,7 @@ Tokens defined in `src/index.css` `@theme` block. Design rules in effect: no gra
 
 ```bash
 npm run build      # generates sitemap.xml + type-check + vite build
-npm run deploy      # build + wrangler deploy (redeploys pelcre.myworkss.workers.dev)
+npm run deploy      # build + wrangler deploy (redeploys pelmot-creativity.com — account_id is pinned in wrangler.jsonc)
 git add -A && git commit -m "..." && git push origin main
 ```
 

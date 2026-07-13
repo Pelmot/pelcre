@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { useSiteData } from "@/context/DataContext";
 
-const SITE_URL = "https://pelcre.myworkss.workers.dev";
+const SITE_URL = "https://pelmot-creativity.com";
 const DEFAULT_OG_IMAGE =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80";
 

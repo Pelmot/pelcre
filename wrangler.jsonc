@@ -2,6 +2,11 @@
   "name": "pelcre",
   "main": "./src/worker.ts",
   "compatibility_date": "2026-07-08",
+  "account_id": "1e8a536df4e8ff6fbf2d1306f3b128c4",
+  "routes": [
+    { "pattern": "pelmot-creativity.com", "custom_domain": true },
+    { "pattern": "www.pelmot-creativity.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
