@@ -2,6 +2,7 @@ interface Env {
   ASSETS: {
     fetch(request: Request): Promise<Response>;
   };
+  IS_PRODUCTION: string;
 }
 
 interface ExecutionContext {
@@ -373,9 +374,25 @@ async function handleSanityProxy(request: Request): Promise<Response> {
   }
 }
 
+// Custom Domains don't force HTTPS by default the way a zone-level "Always Use HTTPS"
+// setting would — that's a dashboard-only zone setting this account doesn't have direct
+// access to configure, so plain http:// requests were being served in full instead of
+// redirected. Enforced here at the Worker level instead, which needs no dashboard access.
+//
+// Gated on the IS_PRODUCTION var (set in wrangler.jsonc, overridden to "false" by
+// .dev.vars for `wrangler dev`) rather than sniffing the request's protocol/hostname —
+// wrangler dev fully simulates the configured custom-domain host for routing purposes
+// (both `request.url` and the `Host` header), so there's no way to distinguish local
+// dev from production by inspecting the request itself once `routes` are configured.
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+    const { pathname } = url;
+
+    if (env.IS_PRODUCTION === "true" && url.protocol === "http:") {
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
 
     if (pathname === "/sitemap.xml") {
       return handleSitemap(request, ctx);

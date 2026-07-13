@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .wrangler
+.dev.vars
 public/sitemap.xml
 worker-configuration.d.ts
 
