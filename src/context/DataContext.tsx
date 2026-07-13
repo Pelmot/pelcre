@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { sanityClient, imageUrl, splitParagraphs } from "@/lib/sanity";
+import { sanityQuery, imageUrl, splitParagraphs } from "@/lib/sanity";
 import { useLanguage } from "@/context/LanguageContext";
 import type { SupportedLanguage } from "@/i18n";
 import {
@@ -341,11 +341,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
     let cancelled = false;
 
     Promise.all([
-      sanityClient.fetch(PROJECTS_QUERY),
-      sanityClient.fetch(CATEGORIES_QUERY),
-      sanityClient.fetch(SETTINGS_QUERY),
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ]).then(([rawProjects, rawCategories, settings]: [any[], any[], any]) => {
+      sanityQuery<any[]>(PROJECTS_QUERY),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      sanityQuery<any[]>(CATEGORIES_QUERY),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      sanityQuery<any>(SETTINGS_QUERY),
+    ]).then(([rawProjects, rawCategories, settings]) => {
       if (cancelled) return;
       if (!settings) {
         setError("Site settings haven't been published in Sanity yet.");

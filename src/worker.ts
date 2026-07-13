@@ -328,12 +328,61 @@ async function handleCrawlerSeoInjection(
   return response;
 }
 
+// --- Same-origin Sanity proxy --------------------------------------------------------
+//
+// The client used to call Sanity's API directly from the browser (sanityClient.fetch),
+// which is a cross-origin request subject to CORS. That works fine in normal browsers,
+// but in-app browsers (Instagram/Facebook's embedded WebView being the reported case)
+// are known to mishandle cross-origin fetches in ways a regular browser doesn't hit —
+// so those visitors saw the request fail outright. Routing the same query through this
+// same-origin endpoint means the visitor's browser only ever talks to our own domain;
+// this Worker fetches Sanity server-side (where CORS doesn't apply at all) and relays
+// the JSON back. See src/lib/sanity.ts's `sanityQuery()`, used by DataContext.tsx.
+
+async function handleSanityProxy(request: Request): Promise<Response> {
+  const requestUrl = new URL(request.url);
+  const query = requestUrl.searchParams.get("query");
+  if (!query) {
+    return new Response(JSON.stringify({ error: "Missing query parameter" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  try {
+    const params: Record<string, string> = {};
+    for (const [key, value] of requestUrl.searchParams) {
+      if (key.startsWith("$")) params[key.slice(1)] = JSON.parse(value);
+    }
+
+    const sanityResponse = await fetch(sanityQueryUrl(query, params));
+    const body = await sanityResponse.text();
+    return new Response(body, {
+      status: sanityResponse.status,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+      },
+    });
+  } catch (error) {
+    console.error("Sanity proxy request failed", error);
+    return new Response(JSON.stringify({ error: "Unable to reach Sanity" }), {
+      status: 502,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+}
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const { pathname } = new URL(request.url);
 
     if (pathname === "/sitemap.xml") {
       return handleSitemap(request, ctx);
+    }
+
+    if (pathname === "/api/sanity") {
+      return handleSanityProxy(request);
     }
 
     if (isCrawlerRequest(request) && isKnownSeoRoute(pathname)) {

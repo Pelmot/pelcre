@@ -26,6 +26,29 @@ export function imageUrl(source: SanityImageSource | undefined, width: number): 
   return urlFor(source).width(width).fit("crop").auto("format").url();
 }
 
+// Routes queries through our own domain (src/worker.ts's /api/sanity handler) instead of
+// fetching cmdikf3a.apicdn.sanity.io directly from the browser. Direct cross-origin fetches
+// are subject to CORS, which some in-app browsers (e.g. Instagram's embedded WebView) handle
+// unreliably; a same-origin request sidesteps that entirely.
+export async function sanityQuery<T = unknown>(
+  query: string,
+  params?: Record<string, unknown>,
+): Promise<T> {
+  const url = new URL("/api/sanity", window.location.origin);
+  url.searchParams.set("query", query);
+  if (params) {
+    for (const [key, value] of Object.entries(params)) {
+      url.searchParams.set(`$${key}`, JSON.stringify(value));
+    }
+  }
+  const response = await fetch(url.toString());
+  if (!response.ok) {
+    throw new Error(`Sanity proxy returned ${response.status}`);
+  }
+  const data = (await response.json()) as { result: T };
+  return data.result;
+}
+
 export function splitParagraphs(text: string | undefined): string[] {
   if (!text) return [];
   return text
