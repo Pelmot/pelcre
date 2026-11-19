@@ -44,7 +44,7 @@ const en = {
   home: {
     seoTitle: "Architecture & Interiors",
     seoDescription:
-      "Pelmot Creativity is a studio designing quiet, material-honest residential, commercial, and landscape architecture worldwide.",
+      "Revak_ArchDesign is a studio designing quiet, material-honest residential, commercial, and landscape architecture worldwide.",
     heroBadge: "Abdurrazzak Jazmati — Est. 2023",
     heroTaglineSuffix:
       "designing houses, interiors, and landscapes that feel discovered rather than built.",
@@ -65,7 +65,7 @@ const en = {
   about: {
     seoTitle: "About",
     seoDescription:
-      "Learn about Pelmot Creativity — our design philosophy, experience, education, and awards.",
+      "Learn about Revak_ArchDesign — our design philosophy, experience, education, and awards.",
     aboutTheStudio: "About the Studio",
     biography: "Biography",
     designAsAct: "Design is the soul of what we go through.",
@@ -89,11 +89,11 @@ const en = {
   services: {
     seoTitle: "Services",
     seoDescription:
-      "Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Pelmot Creativity.",
+      "Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Revak_ArchDesign.",
     whatWeDo: "What We Do",
     title: "Services",
     description:
-      "From first sketch to final finish, Pelmot Creativity offers a full range of architectural and design services tailored to the scale of your project.",
+      "From first sketch to final finish, Revak_ArchDesign offers a full range of architectural and design services tailored to the scale of your project.",
     ctaTitle: "Not sure where to start?",
     ctaDescription:
       "Book an introductory consultation and we'll help you scope the right service for your project.",
@@ -102,7 +102,7 @@ const en = {
   projects: {
     seoTitle: "Projects",
     seoDescription:
-      "Browse residential, commercial, interior, landscape, and concept architecture projects by Pelmot Creativity.",
+      "Browse residential, commercial, interior, landscape, and concept architecture projects by Revak_ArchDesign.",
     portfolio: "Portfolio",
     selectedProjects: "Selected Projects",
     description:
@@ -140,7 +140,7 @@ const en = {
   contact: {
     seoTitle: "Contact",
     seoDescription:
-      "Get in touch with Pelmot Creativity to discuss your next architecture, interior, or landscape project.",
+      "Get in touch with Revak_ArchDesign to discuss your next architecture, interior, or landscape project.",
     getInTouch: "Get in Touch",
     letsStart: "Let's start a conversation",
     description:
@@ -159,12 +159,12 @@ const en = {
   },
   privacy: {
     seoTitle: "Privacy Policy",
-    seoDescription: "How Pelmot Creativity collects, uses, and protects your information.",
+    seoDescription: "How Revak_ArchDesign collects, uses, and protects your information.",
     eyebrow: "Legal",
     title: "Privacy Policy",
     lastUpdated: "Last updated: July 2026",
     intro:
-      "Pelmot Creativity respects your privacy. This page explains what information we collect when you visit this website or get in touch, and how it's used.",
+      "Revak_ArchDesign respects your privacy. This page explains what information we collect when you visit this website or get in touch, and how it's used.",
     collectTitle: "Information We Collect",
     collectBody:
       "When you submit the contact form, we collect the information you provide: your name, email address, phone number (if given), and your message. We don't collect any other personal information, and we don't use tracking cookies.",

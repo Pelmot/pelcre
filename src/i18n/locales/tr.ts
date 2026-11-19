@@ -46,7 +46,7 @@ const tr: TranslationSchema = {
   home: {
     seoTitle: "Mimarlık & İç Mekan",
     seoDescription:
-      "Pelmot Creativity, dünya çapında sade ve malzemeye saygılı konut, ticari ve peyzaj mimarisi tasarlayan bir stüdyodur.",
+      "Revak_ArchDesign, dünya çapında sade ve malzemeye saygılı konut, ticari ve peyzaj mimarisi tasarlayan bir stüdyodur.",
     heroBadge: "Abdurrazzak Jazmati — Kuruluş 2023",
     heroTaglineSuffix:
       "keşfedilmiş hissi veren, inşa edilmiş gibi görünmeyen evler, iç mekanlar ve peyzajlar tasarlıyoruz.",
@@ -67,7 +67,7 @@ const tr: TranslationSchema = {
   about: {
     seoTitle: "Hakkında",
     seoDescription:
-      "Pelmot Creativity hakkında bilgi edinin — tasarım felsefemiz, deneyimimiz, eğitimimiz ve ödüllerimiz.",
+      "Revak_ArchDesign hakkında bilgi edinin — tasarım felsefemiz, deneyimimiz, eğitimimiz ve ödüllerimiz.",
     aboutTheStudio: "Stüdyo Hakkında",
     biography: "Biyografi",
     designAsAct: "Tasarım, içinden geçtiğimiz her şeyin ruhudur.",
@@ -91,11 +91,11 @@ const tr: TranslationSchema = {
   services: {
     seoTitle: "Hizmetler",
     seoDescription:
-      "Pelmot Creativity'den mimari tasarım, iç mekan tasarımı, peyzaj tasarımı, yenileme, görselleştirme ve danışmanlık hizmetleri.",
+      "Revak_ArchDesign'dan mimari tasarım, iç mekan tasarımı, peyzaj tasarımı, yenileme, görselleştirme ve danışmanlık hizmetleri.",
     whatWeDo: "Ne Yapıyoruz",
     title: "Hizmetler",
     description:
-      "İlk eskizden son dokunuşa kadar, Pelmot Creativity projenizin ölçeğine uygun kapsamlı mimari ve tasarım hizmetleri sunar.",
+      "İlk eskizden son dokunuşa kadar, Revak_ArchDesign projenizin ölçeğine uygun kapsamlı mimari ve tasarım hizmetleri sunar.",
     ctaTitle: "Nereden başlayacağınızdan emin değil misiniz?",
     ctaDescription:
       "Tanışma amaçlı bir danışmanlık randevusu alın, projeniz için doğru hizmeti belirlemenize yardımcı olalım.",
@@ -104,7 +104,7 @@ const tr: TranslationSchema = {
   projects: {
     seoTitle: "Projeler",
     seoDescription:
-      "Pelmot Creativity'nin konut, ticari, iç mekan, peyzaj ve konsept mimari projelerine göz atın.",
+      "Revak_ArchDesign'ın konut, ticari, iç mekan, peyzaj ve konsept mimari projelerine göz atın.",
     portfolio: "Portföy",
     selectedProjects: "Seçilmiş Projeler",
     description:
@@ -142,7 +142,7 @@ const tr: TranslationSchema = {
   contact: {
     seoTitle: "İletişim",
     seoDescription:
-      "Bir sonraki mimari, iç mekan veya peyzaj projenizi konuşmak için Pelmot Creativity ile iletişime geçin.",
+      "Bir sonraki mimari, iç mekan veya peyzaj projenizi konuşmak için Revak_ArchDesign ile iletişime geçin.",
     getInTouch: "Bize Ulaşın",
     letsStart: "Bir sohbete başlayalım",
     description:
@@ -161,12 +161,12 @@ const tr: TranslationSchema = {
   },
   privacy: {
     seoTitle: "Gizlilik Politikası",
-    seoDescription: "Pelmot Creativity bilgilerinizi nasıl toplar, kullanır ve korur.",
+    seoDescription: "Revak_ArchDesign bilgilerinizi nasıl toplar, kullanır ve korur.",
     eyebrow: "Yasal",
     title: "Gizlilik Politikası",
     lastUpdated: "Son güncelleme: Temmuz 2026",
     intro:
-      "Pelmot Creativity, gizliliğinize saygı duyar. Bu sayfa, bu web sitesini ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde hangi bilgileri topladığımızı ve bunların nasıl kullanıldığını açıklar.",
+      "Revak_ArchDesign, gizliliğinize saygı duyar. Bu sayfa, bu web sitesini ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde hangi bilgileri topladığımızı ve bunların nasıl kullanıldığını açıklar.",
     collectTitle: "Topladığımız Bilgiler",
     collectBody:
       "İletişim formunu gönderdiğinizde, sağladığınız bilgileri topluyoruz: adınız, e-posta adresiniz, telefon numaranız (verilmişse) ve mesajınız. Başka herhangi bir kişisel bilgi toplamıyoruz ve izleme çerezleri kullanmıyoruz.",

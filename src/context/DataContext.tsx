@@ -307,7 +307,7 @@ function LoadingScreen() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-2xl text-bone uppercase"
         >
-          Pelmot Creativity
+          Revak_ArchDesign
         </motion.div>
       </motion.div>
     </AnimatePresence>

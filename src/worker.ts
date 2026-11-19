@@ -137,7 +137,7 @@ async function handleSitemap(request: Request, ctx: ExecutionContext): Promise<R
 // Regular browsers are untouched (env.ASSETS.fetch passthrough), so react-helmet-async's
 // client-side behavior is unaffected and nothing gets double-rendered.
 
-const STUDIO_NAME = "Pelmot Creativity";
+const STUDIO_NAME = "Revak_ArchDesign";
 const DEFAULT_OG_IMAGE =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80";
 const OG_IMAGE_PARAMS = "w=1200&h=630&fit=crop&auto=format";
@@ -158,31 +158,31 @@ const PAGE_SEO_DEFAULTS: Record<string, PageSeoDefault> = {
   home: {
     seoTitle: "Architecture & Interiors",
     seoDescription:
-      "Pelmot Creativity is a studio designing quiet, material-honest residential, commercial, and landscape architecture worldwide.",
+      "Revak_ArchDesign is a studio designing quiet, material-honest residential, commercial, and landscape architecture worldwide.",
   },
   about: {
     seoTitle: "About",
     seoDescription:
-      "Learn about Pelmot Creativity — our design philosophy, experience, education, and awards.",
+      "Learn about Revak_ArchDesign — our design philosophy, experience, education, and awards.",
   },
   services: {
     seoTitle: "Services",
     seoDescription:
-      "Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Pelmot Creativity.",
+      "Architectural design, interior design, landscape design, renovation, visualization, and consultation services from Revak_ArchDesign.",
   },
   projects: {
     seoTitle: "Projects",
     seoDescription:
-      "Browse residential, commercial, interior, landscape, and concept architecture projects by Pelmot Creativity.",
+      "Browse residential, commercial, interior, landscape, and concept architecture projects by Revak_ArchDesign.",
   },
   contact: {
     seoTitle: "Contact",
     seoDescription:
-      "Get in touch with Pelmot Creativity to discuss your next architecture, interior, or landscape project.",
+      "Get in touch with Revak_ArchDesign to discuss your next architecture, interior, or landscape project.",
   },
   privacy: {
     seoTitle: "Privacy Policy",
-    seoDescription: "How Pelmot Creativity collects, uses, and protects your information.",
+    seoDescription: "How Revak_ArchDesign collects, uses, and protects your information.",
   },
 };
 
