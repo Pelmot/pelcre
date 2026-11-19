@@ -101,6 +101,7 @@ Strict 5-color palette (do not introduce other colors without being asked):
 | `mist` | `#B6B8AB` | Borders, dividers, subtle UI |
 | `gold` / `gold-soft` | `#9FA3AD` / `#B6B8AB` | Accent (replaces old "gold" naming — token names are legacy, values are the cool-slate/sage palette) |
 | `ink` / `charcoal` | `#3C3E4A` | Primary text, nav, buttons, dark-mode background |
+| `pearl` / `navy` / `inferno` | `#E9D4C3` / `#13273F` / `#4E0000` | Pantone accents (Mother of Pearl 12-1006 TCX, Mystic Navy 7546 C, Red Inferno 4975 C) — used only for the background bubbles in `Layout.tsx`, added at the owner's request on 2026-11-19 |
 | `stone` | derived `color-mix` of ink+paper | Muted body text (kept darker than raw `#9FA3AD` for WCAG AA contrast — this was a deliberate fix, don't lighten it) |
 
 Tokens defined in `src/index.css` `@theme` block. Design rules in effect: no gradients (flat `bg-ink/N` overlays on hero photos instead), no glassmorphism (no `backdrop-blur`, solid opaque surfaces), subtle `rounded-lg` (~8px) on cards/buttons/inputs/images, thin `border-mist` over shadows, dark mode fully supported (class-based, toggle in navbar, localStorage key `pelmot-creativity-theme`). Directional Tailwind utilities should be logical (`ps-`/`pe-`/`start-`/`end-`) rather than physical (`pl-`/`pr-`/`left-`/`right-`) so RTL (Arabic) keeps working — see Internationalization section.

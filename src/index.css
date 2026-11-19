@@ -26,6 +26,11 @@
   --color-gold: #9fa3ad;
   --color-gold-soft: #b6b8ab;
 
+  /* Pantone accents (background bubbles) */
+  --color-pearl: #e9d4c3; /* Pantone 12-1006 TCX Mother of Pearl */
+  --color-navy: #13273f; /* Pantone 7546 C Mystic Navy */
+  --color-inferno: #4e0000; /* Pantone 4975 C Red Inferno */
+
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 
   --animate-fade-up: fade-up 0.9s var(--ease-lux) both;

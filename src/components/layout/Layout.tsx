@@ -14,6 +14,14 @@ import { cn } from "@/lib/cn";
 // down, alternating sides/colors for rhythm rather than a repeating mechanical pattern.
 // Kept behind all page content (-z-10) so it can never sit on top of text or buttons —
 // it will naturally be hidden behind photos and solid-color sections, which is expected.
+// Colors cycle through the three Pantone accents (Mother of Pearl, Mystic Navy, Red Inferno).
+// Navy and Red Inferno are kept translucent so page text on top of them stays readable.
+const BUBBLE_COLORS = [
+  "bg-pearl dark:bg-pearl/25",
+  "bg-navy/25 dark:bg-navy/60",
+  "bg-inferno/20 dark:bg-inferno/60",
+] as const;
+
 const SIDE_ACCENTS = [
   { top: "6%", side: "left" },
   { top: "27%", side: "right" },
@@ -113,7 +121,7 @@ export function Layout() {
             className={cn(
               "absolute h-64 w-64 rounded-full sm:h-96 sm:w-96 lg:h-[480px] lg:w-[480px]",
               accent.side === "left" ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2",
-              i % 2 === 0 ? "bg-gold/35 dark:bg-linen/30" : "bg-ink/30 dark:bg-gold-soft/30",
+              BUBBLE_COLORS[i % BUBBLE_COLORS.length],
             )}
             style={{ top: accent.top }}
           />
