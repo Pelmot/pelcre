@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/cn";
 import { useSiteData } from "@/context/DataContext";
 
-const WEB3FORMS_ACCESS_KEY = "21578932-1196-4f93-b18a-aef8f60f55bd";
+// Delivers to revak.designs.arch@gmail.com (key regenerated 2026-11-19).
+const WEB3FORMS_ACCESS_KEY = "4914275f-1338-460c-b1dc-1c6d28b5790a";
 
 interface FormState {
   name: string;

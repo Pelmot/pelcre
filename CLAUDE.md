@@ -66,7 +66,7 @@ All content (projects, bio, services, timeline, skills, software, awards, testim
 
 ## Contact form
 
-`src/components/contact/ContactForm.tsx` posts directly to the Web3Forms API (`https://api.web3forms.com/submit`) — no backend code needed. The access key is a hardcoded constant in that file; this is intentional and safe, not a leaked secret — Web3Forms access keys are designed to be public/client-embedded (same as how Web3Forms' own docs show it in plain HTML). Submissions currently deliver to whatever email was used to generate that key (confirm with the site owner which inbox — it was set up understanding it might need to move to the business inbox later; regenerating the key and swapping the constant is a one-line change). On failure, the form shows an inline error with a `mailto:`/`tel:` fallback to the architect's contact info instead of a silent/fake success state.
+`src/components/contact/ContactForm.tsx` posts directly to the Web3Forms API (`https://api.web3forms.com/submit`) — no backend code needed. The access key is a hardcoded constant in that file; this is intentional and safe, not a leaked secret — Web3Forms access keys are designed to be public/client-embedded (same as how Web3Forms' own docs show it in plain HTML). Submissions deliver to **revak.designs.arch@gmail.com** (key regenerated for that inbox on 2026-11-19). On failure, the form shows an inline error with a `mailto:`/`tel:` fallback to the architect's contact info instead of a silent/fake success state.
 
 ## Privacy policy
 
