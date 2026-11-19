@@ -15,12 +15,8 @@ import { cn } from "@/lib/cn";
 // Kept behind all page content (-z-10) so it can never sit on top of text or buttons —
 // it will naturally be hidden behind photos and solid-color sections, which is expected.
 // Colors cycle through the three Pantone accents (Mother of Pearl, Mystic Navy, Red Inferno).
-// Navy and Red Inferno are kept translucent so page text on top of them stays readable.
-const BUBBLE_COLORS = [
-  "bg-pearl dark:bg-pearl/25",
-  "bg-navy/25 dark:bg-navy/60",
-  "bg-inferno/20 dark:bg-inferno/60",
-] as const;
+// Shown at full strength (exact Pantone values, no transparency) at the owner's request.
+const BUBBLE_COLORS = ["bg-pearl", "bg-navy", "bg-inferno"] as const;
 
 const SIDE_ACCENTS = [
   { top: "6%", side: "left" },
